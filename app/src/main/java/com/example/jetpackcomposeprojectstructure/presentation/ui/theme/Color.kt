@@ -1,23 +1,21 @@
 package com.example.jetpackcomposeprojectstructure.presentation.ui.theme
 
-import androidx.compose.material3.lightColorScheme
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.ui.graphics.Color
 
-val LightColorPalette = lightColorScheme(
-    primary = Color(0xFF6200EE),
-    background = Color(0xFFFFFFFF),
-    onBackground = Color(0xFF000000),
-    surface = Color(0xFFFFFFFF),
-    onSurface = Color(0xFF000000),
-    // Add other colors like secondary, error, etc.
-)
 
-val DarkColorPalette = darkColorScheme(
-    primary = Color(0xFFBB86FC),
-    background = Color(0xFF121212),
-    onBackground = Color(0xFFFFFFFF),
-    surface = Color(0xFF121212),
-    onSurface = Color(0xFFFFFFFF),
-    // Add other colors like secondary, error, etc.
-)
+// Light theme custom colors
+val CustomPrimaryLight = Color(0xFF008577)
+val CustomBackgroundLight = Color(0xFFFFFFFF)
+val CustomOnBackgroundLight = Color(0xFF000000)
+val CustomSurfaceLight = Color(0xFFE0F7FA)
+val CustomOnSurfaceLight = Color(0xFF000000)
+val MyColorLight = Color(0xFF454126)
+
+// Dark theme custom colors
+val CustomPrimaryDark = Color(0xFFBB86FC)
+val CustomBackgroundDark = Color(0xFF121212)
+val CustomOnBackgroundDark = Color(0xFFFFFFFF)
+val CustomSurfaceDark = Color(0xFF1F1B24)
+val CustomOnSurfaceDark = Color(0xFFFFFFFF)
+val MyColorDark = Color(0xFF454156)
+
