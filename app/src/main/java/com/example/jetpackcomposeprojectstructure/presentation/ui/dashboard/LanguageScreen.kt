@@ -1,5 +1,6 @@
 package com.example.jetpackcomposeprojectstructure.presentation.ui.dashboard
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,79 +19,86 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.jetpackcomposeprojectstructure.App
 import com.example.jetpackcomposeprojectstructure.R
 import com.example.jetpackcomposeprojectstructure.localization.updateLocale
 import com.example.jetpackcomposeprojectstructure.presentation.ui.main.MainViewModel
 import com.example.jetpackcomposeprojectstructure.presentation.ui.navigation.Routes
+import com.example.jetpackcomposeprojectstructure.presentation.ui.theme.LocalCustomColors
+import com.example.jetpackcomposeprojectstructure.presentation.ui.theme.MyAppTheme
 import java.util.Locale
 
 @Composable
-fun LanguageScreen(navController: NavController) {
+fun LanguageScreen() {
     // Get the MainViewModel using Hilt
     val viewModel: MainViewModel = hiltViewModel()
 
     val (locale, setLocale) = rememberSaveable { mutableStateOf(Locale.getDefault()) }
     val context = LocalContext.current
+    val customColors = LocalCustomColors.current
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        Column(
+
+    MyAppTheme {
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = 72.dp), // Ensure padding to avoid overlap with FAB
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = stringResource(id = R.string.greeting),
-                style = MaterialTheme.typography.titleLarge
-            )
-
-            Button(
-                onClick = {
-                    val newLocale = Locale("en")
-                    setLocale(newLocale)
-                    updateLocale(context, newLocale)
-                }
-            ) {
-                Text(text = "Change to English")
-            }
-            Button(
-                onClick = {
-                    val newLocale = Locale("fr")
-                    setLocale(newLocale)
-                    updateLocale(context, newLocale)
-                }
-            ) {
-                Text(text = "Change to French")
-            }
-            Button(
-                onClick = {
-                    val newLocale = Locale("es")
-                    setLocale(newLocale)
-                    updateLocale(context, newLocale)
-                }
-            ) {
-                Text(text = "Change to Spanish")
-            }
-        }
-
-        FloatingActionButton(
-            onClick = {
-                // Handle logout action
-                viewModel.logout()  // Clear local data
-                navigateToLoginPage()
-            },
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
+                .background(color = customColors.customBackground)
                 .padding(16.dp)
         ) {
-            Text("Logout")
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(bottom = 72.dp), // Ensure padding to avoid overlap with FAB
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = stringResource(id = R.string.greeting),
+                    style = MaterialTheme.typography.titleLarge,
+                            color = customColors.customOnSurface
+                )
+
+                Button(
+                    onClick = {
+                        val newLocale = Locale("en")
+                        setLocale(newLocale)
+                        updateLocale(context, newLocale)
+                    }
+                ) {
+                    Text(text = "Change to English")
+                }
+                Button(
+                    onClick = {
+                        val newLocale = Locale("fr")
+                        setLocale(newLocale)
+                        updateLocale(context, newLocale)
+                    }
+                ) {
+                    Text(text = "Change to French")
+                }
+                Button(
+                    onClick = {
+                        val newLocale = Locale("es")
+                        setLocale(newLocale)
+                        updateLocale(context, newLocale)
+                    }
+                ) {
+                    Text(text = "Change to Spanish")
+                }
+            }
+
+            FloatingActionButton(
+                onClick = {
+                    // Handle logout action
+                    viewModel.logout()  // Clear local data
+                    navigateToLoginPage()
+                },
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(16.dp)
+            ) {
+                Text("Logout", color = customColors.customOnSurface )
+            }
         }
     }
 }

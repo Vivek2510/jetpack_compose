@@ -12,7 +12,7 @@ import com.example.jetpackcomposeprojectstructure.presentation.ui.dashboard.Lang
 @Composable
 fun NavGraph(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(navController, startDestination = "Language", modifier = modifier) {
-        composable("Language") { LanguageScreen(navController) }
+        composable("Language") { LanguageScreen() }
         composable("Theme") { ThemeScreen() }
         composable("Api") { ApiDemo() }
     }

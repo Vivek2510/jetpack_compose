@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposeprojectstructure.presentation.ui.main.MainViewModel
 import com.example.jetpackcomposeprojectstructure.presentation.ui.navigation.AppNavigation
-import com.example.jetpackcomposeprojectstructure.ui.theme.JetpackComposeProjectStructureTheme
+import com.example.jetpackcomposeprojectstructure.presentation.ui.theme.MyAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val user by mainViewModel.user.collectAsState()
             val isLoading by mainViewModel.isLoading.collectAsState()
-            JetpackComposeProjectStructureTheme {
+            MyAppTheme {
                 if (isLoading) {
                     LoadingScreen()
                 } else {

@@ -1,11 +1,11 @@
 package com.example.jetpackcomposeprojectstructure.presentation.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import com.example.jetpackcomposeprojectstructure.ThemeManager
 
 // Custom color scheme to use your own color names
 data class CustomColorScheme(
@@ -30,7 +30,10 @@ val LocalCustomColors = staticCompositionLocalOf {
 }
 
 @Composable
-fun MyAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun MyAppTheme( content: @Composable () -> Unit) {
+
+    val darkTheme = ThemeManager.isDarkTheme
+
     val customColors = if (darkTheme) {
         CustomColorScheme(
             customPrimary = CustomPrimaryDark,
