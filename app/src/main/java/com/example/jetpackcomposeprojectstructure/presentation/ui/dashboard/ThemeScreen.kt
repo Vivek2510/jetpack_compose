@@ -8,8 +8,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
-import com.example.jetpackcomposeprojectstructure.ThemeManager
+import com.example.jetpackcomposeprojectstructure.R
+import com.example.jetpackcomposeprojectstructure.data.di.ThemeManager
 import com.example.jetpackcomposeprojectstructure.presentation.ui.theme.LocalCustomColors
 import com.example.jetpackcomposeprojectstructure.presentation.ui.theme.MyAppTheme
 
@@ -28,7 +30,7 @@ fun ThemeScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Hello, World!",
+                text = stringResource(id = R.string.greeting),
                 color = customColors.customOnBackground, // Use custom onBackground color
                 fontSize = 28.sp
             )

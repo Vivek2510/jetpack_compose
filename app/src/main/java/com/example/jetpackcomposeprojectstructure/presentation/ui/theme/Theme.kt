@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import com.example.jetpackcomposeprojectstructure.ThemeManager
+import com.example.jetpackcomposeprojectstructure.data.di.ThemeManager
 
 // Custom color scheme to use your own color names
 data class CustomColorScheme(
