@@ -23,12 +23,19 @@ This project is a basic structured template following the Clean Architecture pri
 This project follows Clean Architecture, which separates concerns into different layers:
 
 `project-root/
+
 │── data/               # Data sources (local & remote)
+
 │── domain/             # Business logic (UseCases, Repositories)
+
 │── presentation/       # UI Layer (ViewModels, Screens, Components)
+
 │── core/               # Common utilities (Networking, Storage, Themes)
+
 │── localization/       # Multi-language setup
+
 │── themes/             # Dark and Light mode configurations
+
 │── data/local/            # Local storage setup (e.g., shared preferences, database)`
 
 
