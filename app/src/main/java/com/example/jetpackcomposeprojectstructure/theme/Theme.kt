@@ -1,4 +1,4 @@
-package com.example.jetpackcomposeprojectstructure.ui.theme
+package com.example.jetpackcomposeprojectstructure.theme
 
 import android.app.Activity
 import android.os.Build
