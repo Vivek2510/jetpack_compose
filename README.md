@@ -1,3 +1,6 @@
+https://github.com/user-attachments/assets/0ec223aa-5ad1-432c-99e0-a928ef1c16a4
+
+
 ## Overview
 
 This project is a basic structured template following the Clean Architecture principles. It includes essential configurations and implementations for:
